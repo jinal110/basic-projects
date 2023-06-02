@@ -1,26 +1,4 @@
-// function display(value) {
-//   const isNumber = /^\d+$/.test(value);
-//   const showcase = document.getElementById("showcase");
-//   const lastChar = showcase.value.slice(-1);
 
-//   if (isNumber) {
-//     showcase.value += value;
-//   } else if (value === '+' || value === '-' || value === '*' || value === '/' || value === '%') {
-//     if (lastChar !== ' ' && lastChar !== '') {
-//       showcase.value += ' ' + value + ' ';
-//     }
-//   } else if (value === '+/-') {
-//     const expression = showcase.value.trim();
-//     const hasMinusSign = expression.startsWith('-');
-//     showcase.value = hasMinusSign ? expression.substring(1) : '-' + expression;
-//   } else if (value === '.' || value === 'Decimal') {
-//     const lastNumber = getLastNumber(showcase.value);
-
-//     if (!lastNumber.includes('.')) {
-//       showcase.value += '.';
-//     }
-//   }
-// }
 
 function display(value) {
   const isNumber = /^\d+$/.test(value);
@@ -77,49 +55,6 @@ function display(value) {
   }
 }
 
-
-
-
-
-
-// //bekar code but chalta hai
-// function display(value) {
-//   const isNumber = /^\d+$/.test(value);
-//   const showcase = document.getElementById("showcase");
-//   const lastChar = showcase.value.slice(-1);
-
-//   if (isNumber) {
-//     showcase.value += value;
-//   } else if (value === '+' || value === '-' || value === '*' || value === '/' || value === '%') {
-//     if (lastChar !== ' ' && lastChar !== '') {
-//       showcase.value += ' ' + value + ' ';
-//     }
-//   } else if (value === '+/-') {
-//     const expression = showcase.value.trim();
-//     const tokens = expression.split(' ');
-
-//     for (let i = tokens.length - 1; i >= 0; i--) {
-//       const token = tokens[i];
-
-//       if (/^-?\d/.test(token)) {
-//         if (token.startsWith('-')) {
-//           tokens[i] = token.substring(1);
-//         } else {
-//           tokens[i] = '-' + token;
-//         }
-//         break;
-//       }
-//     }
-
-//     showcase.value = tokens.join(' ');
-//   } else if (value === '.' || value === 'Decimal') {
-//     const lastNumber = getLastNumber(showcase.value);
-
-//     if (!lastNumber.includes('.')) {
-//       showcase.value += '.';
-//     }
-//   }
-// }
 
 
 function calculate() {
@@ -220,6 +155,7 @@ document.getElementById("showcase").addEventListener("keydown", function(event) 
 
 
 document.getElementById("equals-button").addEventListener("click", calculate);
+
 
 
 

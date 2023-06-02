@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+input[type="button"] {
+    height: 60px;
+    width: 80px;
+    border: solid 0.7px black;
+    border-radius: 10%;
+} 
+button#padding-right {
+    width: 204%;
+    border-radius: 10%;
+}
+input#code_yellow {
+    background-color: #f9c60d;
+}
+input#padding-right {
+    width: 99%;
+}
+input#showcase {
+    font-size: 26.7px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #202020;
+}
+h1,h3 {
+    color: whitesmoke;
+    font-family: cursive;
+    font-weight: 500;
+    font-style: oblique;
+}

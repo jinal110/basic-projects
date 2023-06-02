@@ -1,3 +1,5 @@
+
+
 function display(value) {
   const isNumber = /^\d+$/.test(value);
   const showcase = document.getElementById("showcase");
@@ -11,8 +13,39 @@ function display(value) {
     }
   } else if (value === '+/-') {
     const expression = showcase.value.trim();
-    const hasMinusSign = expression.startsWith('-');
-    showcase.value = hasMinusSign ? expression.substring(1) : '-' + expression;
+    const tokens = expression.split(' ');
+    let foundNumber = false;
+
+    for (let i = tokens.length - 1; i >= 0; i--) {
+      const token = tokens[i];
+
+      if (/^-?\d/.test(token)) {
+        if (token.startsWith('-')) {
+          tokens[i] = token.substring(1);
+        } else {
+          tokens[i] = '-' + token;
+        }
+        foundNumber = true;
+        break;
+      }
+    }
+
+    if (!foundNumber) {
+      for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i];
+
+        if (/^-?\d/.test(token)) {
+          if (token.startsWith('-')) {
+            tokens[i] = token.substring(1);
+          } else {
+            tokens[i] = '-' + token;
+          }
+          break;
+        }
+      }
+    }
+
+    showcase.value = tokens.join(' ');
   } else if (value === '.' || value === 'Decimal') {
     const lastNumber = getLastNumber(showcase.value);
 
@@ -21,6 +54,8 @@ function display(value) {
     }
   }
 }
+
+
 
 function calculate() {
   const expression = document.getElementById("showcase").value;
